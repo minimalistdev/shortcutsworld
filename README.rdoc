@@ -1,4 +1,4 @@
-== Colchonet
+== ShortcutsWorld
 
 *ShortcutsWorld*[www.shortcutsworld.com] is a RoR Project to show my skills. 
 
