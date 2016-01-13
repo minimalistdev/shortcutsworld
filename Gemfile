@@ -11,6 +11,8 @@ gem 'turbolinks'
 
 group :development, :test do
   gem 'byebug'
+  gem 'guard-rspec', require: false
+  gem 'spring-commands-rspec'
 end
 
 group :development do
