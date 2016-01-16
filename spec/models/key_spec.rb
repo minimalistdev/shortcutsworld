@@ -7,4 +7,5 @@ RSpec.describe Key, type: :model do
   it {should have_many(:codes)}
 
   it {should belong_to(:so)}
+
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160116130757) do
+ActiveRecord::Schema.define(version: 20160116135128) do
 
   create_table "apps", force: :cascade do |t|
     t.integer  "so_id"
@@ -39,6 +39,24 @@ ActiveRecord::Schema.define(version: 20160116130757) do
   end
 
   add_index "keys", ["so_id"], name: "index_keys_on_so_id"
+
+  create_table "keys_shortcuts", id: false, force: :cascade do |t|
+    t.integer "shortcut_id", null: false
+    t.integer "key_id",      null: false
+  end
+
+  add_index "keys_shortcuts", ["key_id", "shortcut_id"], name: "index_keys_shortcuts_on_key_id_and_shortcut_id"
+  add_index "keys_shortcuts", ["shortcut_id", "key_id"], name: "index_keys_shortcuts_on_shortcut_id_and_key_id"
+
+  create_table "shortcuts", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "app_id"
+  end
+
+  add_index "shortcuts", ["app_id"], name: "index_shortcuts_on_app_id"
 
   create_table "sos", force: :cascade do |t|
     t.string   "name"
