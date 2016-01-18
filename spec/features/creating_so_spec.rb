@@ -5,12 +5,14 @@ RSpec.feature "Creating SO" do
   scenario "creating a SO" do
     visit "/"
 
-    click_link "add so"
+    first(:link, '+').click
 
     fill_in "Name", with: "Windows"
-    attach_file("Image Upload", File.absolute_path('./img.png'))
+    attach_file("Image Upload", File.absolute_path('./app/assets/images/profile.png'))
 
     click_button "Create SO"
+
+    expect(page).to have_content("SO created successfully!")
   end
 
 end
