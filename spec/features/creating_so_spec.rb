@@ -8,7 +8,7 @@ RSpec.feature "Creating SO" do
     first(:link, '+').click
 
     fill_in "Name", with: "Windows"
-    attach_file("Image Upload", File.absolute_path('./app/assets/images/profile.png'))
+    attach_file('so_img', File.absolute_path('./app/assets/images/profile.png'))
 
     click_button "Create SO"
 

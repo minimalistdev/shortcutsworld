@@ -111,7 +111,7 @@ header .container .add-button{
     font-size: 1em;
     margin-top: 15px;
 }
-.modal-body h2 {
+.container h2 {
     /*margin-bottom: 60px;*/
     padding-bottom: 30px;
 }
@@ -476,4 +476,25 @@ footer .footer-below {
 .portfolio-modal .modal-backdrop {
     display: none;
     opacity: 0;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: left;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    float: left;
+    cursor: inherit;
+    display: block;
 }
