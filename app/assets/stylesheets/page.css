@@ -498,3 +498,17 @@ footer .footer-below {
     cursor: inherit;
     display: block;
 }
+
+.panel {
+    height: 170px;
+}
+
+.panel-body img {
+    height: 100px;
+    weight: 100px;
+}
+
+.col-centered {
+    float: none;
+    margin: auto auto;
+}
