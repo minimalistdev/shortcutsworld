@@ -28,3 +28,14 @@ $(document).ready(function(){
         $.bootstrapGrowl($("#alert").show(), { type: 'danger',  width: 350, align: 'right', delay: 4000});
     }
 });
+//
+//$(document).ready(function(){
+//    $('#new_so').validator().on("submit", function(event){
+//        if (event.isDefaultPrevented()) {
+//           alert("Error");
+//        } else {
+//            // everything looks good!
+//            event.preventDefault();
+//        }
+//    });
+//});
