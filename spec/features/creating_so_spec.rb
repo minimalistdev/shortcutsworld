@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Creating SO" do
 
-  scenario "creating a SO" do
+  scenario "successful on creating a SO" do
     visit "/"
 
     first(:link, '+').click
@@ -14,6 +14,16 @@ RSpec.feature "Creating SO" do
 
     expect(page).to have_css(".so-name", :text => "Windows")
     expect(page).to have_selector('#notice', visible: false, :text => "SO created successfully!")
+  end
+
+  scenario "error on create so" do
+    visit "/"
+
+    first(:link, '+').click
+
+    click_button "Create SO"
+
+    expect(page).to have_selector('#alert', visible: false, :text => "Error on create SO")
   end
 
 end
