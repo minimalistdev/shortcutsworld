@@ -39,4 +39,7 @@ $(document).ready(function(){
    if($("#notice").length){
        $.bootstrapGrowl($("#notice").show(), { type: 'info',  width: 350, align: 'right', delay: 4000});
     }
+    if($("#alert").length){
+        $.bootstrapGrowl($("#alert").show(), { type: 'danger',  width: 350, align: 'right', delay: 4000});
+    }
 });
