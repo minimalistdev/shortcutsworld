@@ -1,4 +1,3 @@
-<!-- Header -->
 <header>
   <div class="container">
     <div class="row">
@@ -14,22 +13,23 @@
 
     <div class="col-centered">
 
-      <% @sos.each do |so| %>
-          <div class="col-md-3 col-md-offset-1 text-center">
-            <div class="panel panel-primary">
-              <div class="panel-heading">
-                <h3 class="panel-title">so.name</h3>
+      <% unless @sos.nil? %>
+          <% @sos.each do |so| %>
+              <div class="col-md-3 col-md-offset-1 text-center">
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">so.name</h3>
+                  </div>
+                  <div class="panel-body">
+                    <%= image_tag so.img, class: "img-responsive center-block" %>
+                  </div>
+                </div>
               </div>
-              <div class="panel-body">
-                <%= image_tag so.img, class: "img-responsive center-block" %>
-              </div>
-            </div>
-          </div>
+          <% end %>
       <% end %>
 
     </div>
   </div>
-
 </header>
 <!-- Portfolio Grid Section -->
 <section id="portfolio">
@@ -160,7 +160,7 @@
       <!--<div class="modal-body">-->
       <h2>Create SO</h2>
       <!--<hr class="star-primary">-->
-      <%= form_for(@so, :html => {:multipart => true, class: 'form-horizontal'}, remote: true) do |f| %>
+      <%= form_for(@so, :html => {:multipart => true, class: 'form-horizontal'}) do |f| %>
 
           <div class='form-group'>
             <div class='control-label col-md-2'>

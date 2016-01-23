@@ -19,3 +19,24 @@ $(document).ready( function() {
 
     });
 });
+
+$(document).ready(function(){
+    $(document).ajaxSuccess(function(){
+        $.bootstrapGrowl("another message, yay!", {
+            ele: 'body', // which element to append to
+            type: 'info', // (null, 'info', 'danger', 'success')
+            offset: {from: 'top', amount: 20}, // 'top', or 'bottom'
+            align: 'right', // ('left', 'right', or 'center')
+            width: 250, // (integer, or 'auto')
+            delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+            allow_dismiss: true, // If true then will display a cross to close the popup.
+            stackup_spacing: 10 // spacing between consecutively stacked growls.
+        });
+    });
+});
+
+$(document).ready(function(){
+   if($("#notice").length){
+       $.bootstrapGrowl($("#notice").show(), { type: 'info',  width: 350, align: 'right', delay: 4000});
+    }
+});

@@ -512,3 +512,7 @@ footer .footer-below {
     float: none;
     margin: auto auto;
 }
+
+header {
+    height: 650px;
+}

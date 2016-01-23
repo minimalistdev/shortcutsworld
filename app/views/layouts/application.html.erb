@@ -10,6 +10,15 @@
 </head>
 <body id="page-top" class="index">
 
+<div hidden="true">
+  <% if notice.present? %>
+      <p id="notice"><%= notice %> </p>
+  <% end %>
+  <% if alert.present? %>
+      <p id="alert"><%= alert %> </p>
+  <% end %>
+</div>
+
 <%= render 'layouts/header' %>
 
 <%= yield %>
