@@ -12,7 +12,8 @@ RSpec.feature "Creating SO" do
 
     click_button "Create SO"
 
-    expect(page).to have_content("SO created successfully!")
+    expect(page).to have_css(".so-name", :text => "Windows")
+    expect(page).to have_selector('#notice', visible: false, :text => "SO created successfully!")
   end
 
 end

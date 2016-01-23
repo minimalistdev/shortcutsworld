@@ -3,8 +3,6 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
-
-
 body {
     overflow-x: hidden;
 }
@@ -57,59 +55,65 @@ hr.star-primary:after {
     font-size: 2em;
 }
 
-hr.star-light {
-    border-color: #fff;
+.title {
+    margin-top: -20px;
+    margin-bottom: 13px;
 }
 
-hr.star-light:after {
-    color: #fff;
-    background-color: #18bc9c;
-}
+/*hr.star-light {*/
+    /*border-color: #fff;*/
+/*}*/
 
-hr.star-primary {
-    border-color: #2c3e50;
-}
+/*hr.star-light:after {*/
+    /*color: #fff;*/
+    /*background-color: #18bc9c;*/
+/*}*/
 
-hr.star-primary:after {
-    color: #2c3e50;
-    background-color: #fff;
-}
+/*hr.star-primary {*/
+    /*border-color: #2c3e50;*/
+/*}*/
+
+/*hr.star-primary:after {*/
+    /*color: #2c3e50;*/
+    /*background-color: #fff;*/
+/*}*/
 
 .img-centered {
     margin: 0 auto;
 }
 
-header {
+#top {
     /*text-align: center;*/
     color: #fff;
     background: #18bc9c;
 }
 
-header .container {
-    padding-top: 100px;
+#top .container {
+    /*padding-top: 60px;*/
     padding-bottom: 50px;
 }
 
-header img {
+#top img {
     display: block;
     margin: 0 auto 20px;
 }
 
-header .intro-text .name {
-    display: block;
-    /*font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;*/
-    font-size: 2em;
-    font-weight: 700;
-}
+/*#top .intro-text .name {*/
+    /*display: block;*/
+    /*/!*font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;*!/*/
+    /*font-size: 2em;*/
+    /*font-weight: 700;*/
+/*}*/
 
-header .intro-text .skills {
-    font-size: 1.25em;
-    font-weight: 300;
-}
+/*#top .intro-text .skills {*/
+    /*font-size: 1.25em;*/
+    /*font-weight: 300;*/
+/*}*/
 
-header .container .add-button{
+.add-button{
     font-size: 1em;
-    margin-top: 15px;
+    margin-top: 7px;
+    position: relative;
 }
 .container h2 {
     /*margin-bottom: 60px;*/
@@ -191,7 +195,7 @@ header .container .add-button{
 }
 
 section {
-    padding: 100px 0;
+    padding: 100px 0 0 0;
 }
 
 section h2 {
@@ -513,6 +517,7 @@ footer .footer-below {
     margin: auto auto;
 }
 
-header {
-    height: 650px;
+#top {
+    height: inherit;
+    /*/!*max-height: 600px;*!/*/
 }
