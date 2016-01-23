@@ -169,14 +169,14 @@
       <!--<div class="modal-body">-->
       <h2>Create SO</h2>
       <!--<hr class="star-primary">-->
-      <%= form_for(@so, :html => {:multipart => true, class: 'form-horizontal'}) do |f| %>
+      <%= form_for(@so, :html => {:multipart => true, class: 'form-horizontal', 'data-toggle' => 'validator'}) do |f| %>
 
           <div class='form-group'>
             <div class='control-label col-md-2'>
               <%= f.label :name %>
             </div>
             <div class='col-md-9'>
-              <%= f.text_field :name, class: 'form-control', placeholder: 'SO name', autofocus: true %>
+              <%= f.text_field :name, class: 'form-control', placeholder: 'SO name', autofocus: true, required: true %>
             </div>
           </div>
 
@@ -184,16 +184,13 @@
             <div class='control-label col-md-3'>
               <label>Image Upload</label>
             </div>
-            <!--<div class="col-md-1">-->
-            <!--<span class="btn btn-primary btn-file">Upload SO Imagexxxxxxxxxxxxxxx</span>-->
-            <!--</div>-->
             <div class="input-group col-md-8">
                 <span class="input-group-btn">
                     <span class="btn btn-primary btn-file">
-                        Browse&hellip; <%= f.file_field :img %>
+                        Browse&hellip; <%= f.file_field :img, required: true %>
                     </span>
                 </span>
-              <input type="text" class="form-control" readonly>
+              <input required="required" type="text" class="form-control">
             </div>
           </div>
 
