@@ -521,3 +521,15 @@ footer .footer-below {
     height: inherit;
     /*/!*max-height: 600px;*!/*/
 }
+
+.clickable {
+    cursor: pointer;
+    cursor: hand;
+}
+
+.selectable .ui-selected {
+    -webkit-filter: saturate(400%);
+    /*-webkit-filter: grayscale(100%);*/
+    /*box-shadow: 10px 10px 5px #888888;*/
+    /*backgroupd-color:#B454C7;*/
+}
