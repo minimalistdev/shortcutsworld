@@ -30,9 +30,24 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    $(".selectable").selectable(function(target) {
+    $(".selectable").selectable(function (target) {
         console.log(target);
     });
 });
 
-$(".so_id_"+gon.soSelectedId).addClass('ui-selected')
+$(".so_id_" + gon.soSelectedId).addClass('ui-selected')
+
+getParameters = function () {
+    return "?so_id=2"
+};
+
+$("#new-app-btn").click(function () {
+
+    var id = $(".ui-selected").attr('id');
+
+    if (id === undefined || id === null) {
+        alert("selecione o SO");
+    } else {
+        $.get("/sos/" + id + "/app/new");
+    }
+});

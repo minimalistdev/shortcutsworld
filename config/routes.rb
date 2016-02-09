@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   root 'page#index'
 
   get 'sos/new', to: 'sos#new', as: 'new_so'
-  get 'sos/:id', to: 'page#index', as: 'so_path'
+  get 'sos/:so_id', to: 'page#index', as: 'so_path'
+  get 'sos/:id/apps/new', to: 'apps#new', as: 'new_app'
+  post 'sos/:id/apps', to: 'apps#create', as: 'so_apps'
+  get 'sos/:so_id/apps/:app_id', to: 'page#index', as: 'so_apps_path'
   post 'sos', to: 'sos#create'
 
   # resources :sos

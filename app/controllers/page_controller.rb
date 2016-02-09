@@ -1,7 +1,7 @@
 class PageController < ApplicationController
   def index
     begin
-      @soSelected = So.find(params[:id])
+      @soSelected = So.find(params[:so_id])
     rescue ActiveRecord::RecordNotFound => e
       @soSelected = So.new
     end
