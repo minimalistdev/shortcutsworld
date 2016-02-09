@@ -6,7 +6,7 @@ class SosController < ApplicationController
   def create
     @so = So.new(so_params)
     if @so.save
-      redirect_to :root, notice: 'SO created successfully!'
+      redirect_to "/sos/#{@so.id}", notice: 'SO created successfully!'
     else
       redirect_to :root, alert: 'Error on create SO!'
     end

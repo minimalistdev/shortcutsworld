@@ -34,3 +34,5 @@ $(document).ready(function () {
         console.log(target);
     });
 });
+
+$(".so_id_"+gon.soSelectedId).addClass('ui-selected')

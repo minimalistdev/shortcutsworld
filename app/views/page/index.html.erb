@@ -7,7 +7,7 @@
       </div>
       <div class="title col-md-offset-4 col-md-4 text-center">
         <h2>Select the SO</h2>
-        <h2>SO selected: <%= @soSelected.name %></h2>
+        <h2>Selected <%= @soSelected.id %></h2>
       </div>
     </div>
 
@@ -16,7 +16,7 @@
       <div class="selectable">
         <% unless @sos.nil? %>
             <% @sos.each do |so| %>
-                <div class="col-md-3 col-md-offset-1 text-center">
+                <div class="col-md-3 col-md-offset-1 text-center <%= "so_id_#{so.id}" %>">
                   <div class="panel panel-primary clickable">
                     <div class="panel-heading">
                       <h3 class="panel-title so-name"><%= so.name %></h3>
