@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   root 'page#index'
 
-  post '/sos', to: 'sos#create'
+  get 'sos/new', to: 'sos#new', as: 'new_so'
+  get 'sos/:id', to: 'page#index', as: 'so'
+  post 'sos', to: 'sos#create'
+
+  # resources :sos
   # get 'page/index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

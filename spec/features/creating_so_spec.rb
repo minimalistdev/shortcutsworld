@@ -6,7 +6,7 @@ RSpec.feature "Creating SO" do
 
     visit "/"
 
-    first(:link, '+').click
+    click_link "new-so-btn"
 
     fill_in "Name", with: "Windows"
     attach_file('so_img', File.absolute_path('./app/assets/images/profile.png'))

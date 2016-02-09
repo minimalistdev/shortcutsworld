@@ -1,4 +1,8 @@
 class SosController < ApplicationController
+  def new
+    @so = So.new
+  end
+
   def create
     @so = So.new(so_params)
     if @so.save
@@ -6,7 +10,6 @@ class SosController < ApplicationController
     else
       redirect_to :root, alert: 'Error on create SO!'
     end
-
   end
 
   private

@@ -1,0 +1,36 @@
+<div class="container createSO">
+
+  <h2 class="text-center">Create SO</h2>
+
+  <%= form_for(@so, :html => {:multipart => true, class: 'form-horizontal', 'data-toggle' => 'validator'}) do |f| %>
+
+      <div id='so_name_field' class='form-group'>
+        <div class='control-label col-md-2'>
+          <%= f.label :name %>
+        </div>
+        <div class='col-md-9'>
+          <%= f.text_field :name, class: 'form-control', placeholder: 'SO name', autofocus: true, required: true %>
+        </div>
+      </div>
+
+      <div class='form-group' id="so_img_field">
+        <div class='control-label col-md-3'>
+          <label>Image Upload</label>
+        </div>
+        <div class="input-group col-md-8">
+                <span class="input-group-btn">
+                    <span class="btn btn-primary btn-file">
+                        Browse&hellip; <%= f.file_field :img, required: true %>
+                    </span>
+                </span>
+          <input required="required" type="text" class="form-control">
+        </div>
+      </div>
+
+      <div class='form-group'>
+        <div class='col-md-offset-2 col-md-5'>
+          <%= f.submit 'Create SO', class: 'btn btn-primary btn-lg pull-right text-center submit-button' %>
+        </div>
+      </div>
+  <% end %>
+</div>
