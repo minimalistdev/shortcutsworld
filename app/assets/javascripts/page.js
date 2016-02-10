@@ -35,11 +35,9 @@ $(document).ready(function () {
     });
 });
 
-$(".so_id_" + gon.soSelectedId).addClass('ui-selected')
-
-getParameters = function () {
-    return "?so_id=2"
-};
+$(document).ready(function () {
+    $(".so_id_" + gon.soSelectedId).addClass('ui-selected');
+});
 
 $("#new-app-btn").click(function () {
 
@@ -48,6 +46,7 @@ $("#new-app-btn").click(function () {
     if (id === undefined || id === null) {
         alert("selecione o SO");
     } else {
-        $.get("/sos/" + id + "/app/new");
+        console.log("called: /sos/" + id + "/apps/new")
+        window.location.href = "/sos/" + id + "/apps/new";
     }
 });
