@@ -1,5 +1,14 @@
 class AppsController < ApplicationController
 
+  def index
+    @apps = App.all
+
+    respond_to do |format|
+      format.json { render json: @apps.to_json}
+    end
+
+  end
+
   def new
     @so = So.find(params[:id])
     @app = @so.apps.build
