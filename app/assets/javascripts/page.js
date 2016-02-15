@@ -41,7 +41,6 @@ $(document).ready(function () {
 
 $("#new-app-btn").click(function () {
 
-
     var id = $(".ui-selected").attr('id');
 
     if (id === undefined || id === null) {
@@ -52,26 +51,3 @@ $("#new-app-btn").click(function () {
     }
 });
 
-
-$("#test-app-btn").click(function () {
-    $("#div_apps").html('');
-    var html = '';
-    $.get("apps", function( data ){
-        $.each(data, function(i, item){
-            html += '<div class="col-md-3 col-md-offset-1 text-center app_id_'+ item.id +'">'+
-                        '<div class="panel panel-primary clickable">'+
-                            '<div class="panel-heading">'+
-                                '<h3 class="panel-title app-name">'+ item.name +'</h3>'+
-                            '</div>'+
-                            '<div class="panel-body">'+
-                                '<img class="img-responsive center-block" src="'+ item.img.url +'" '+
-                            '</div>'+
-                        '</div>'+
-                     '</div>';
-            console.log(item.img);
-        });
-        $("#div_apps").append(html);
-
-    });
-    history.pushState(null, "/", "http:www.example.com");
-});

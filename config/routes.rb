@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post 'sos/:id/apps', to: 'apps#create', as: 'so_apps'
   get 'sos/:so_id/apps/:app_id', to: 'page#index', as: 'so_apps_path'
   post 'sos', to: 'sos#create'
-  get 'apps', to: 'apps#index'
+  get 'sos/:id/apps', to: 'apps#index'
 
   # resources :sos
   # get 'page/index'

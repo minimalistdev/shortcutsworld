@@ -1,7 +1,8 @@
 class AppsController < ApplicationController
 
   def index
-    @apps = App.all
+    @so = So.find(params[:id])
+    @apps = @so.apps
 
     respond_to do |format|
       format.json { render json: @apps.to_json}
