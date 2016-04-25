@@ -3,38 +3,31 @@ require 'rails_helper'
 RSpec.feature "Creating App" do
 
   scenario "successful on creating a App", :js => true do
+    # page.driver.browser.manage.window.resize_to(1500,780)
 
-    so = FactoryGirl.create(:so)
+    Capybara.ignore_hidden_elements = false
 
-    # so.save!
-
-    a = So.find_by_id(1)
-
-    expect(a).to eq(so)
+    FactoryGirl.create(:so)
 
     visit "/"
-
-    page.save_screenshot('screenshot.png')
 
     page.find(".so_id_1").click
 
     click_on "new-app-btn"
 
-    print page.html
 
-    # visit so_apps_path(so)
+    expect(page).to have_selector('h2', :text => "Create App")
+
+    fill_in "Name", with: "Intellij"
+    attach_file('app_img', File.absolute_path('./spec/support/intellij.png'))
 
 
-    # expect(pge).to must_be()
-    expect(page).to have_title(('Create App'))
+    page.save_screenshot('screenshot.png')
+    page.find("#create-app-btn").click
 
-    # fill_in "Name", with: "Eclipse"
-    # attach_file('so_img', File.absolute_path('./app/assets/images/profile.png'))
-    #
-    # click_on "Create App"
-    #
-    # expect(page).to have_css(".app-name", :text => "Eclipse")
-    # expect(page).to have_selector('#notice', visible: false, :text => "App created successfully!")
+
+    expect(page).to have_css(".app-name", :text => "Intellij")
+    expect(page).to have_selector('#notice', visible: false, :text => "App created successfully!")
   end
 
 

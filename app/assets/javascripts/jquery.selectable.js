@@ -53,7 +53,7 @@
                                             '<h3 class="panel-title app-name">'+ item.name +'</h3>'+
                                         '</div>'+
                                         '<div class="panel-body">'+
-                                            '<img class="img-responsive center-block" src="'+ item.img.url +'" '+
+                                            '<img class="img-responsive center-block" src="'+ item.img.url +'">'+
                                         '</div>'+
                                     '</div>'+
                                 '</div>';
