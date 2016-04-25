@@ -61,7 +61,7 @@
                     $("#div_apps").append(html);
 
                 });
-                history.pushState(null, "/", "/sos/"+ so_id +"/apps");
+                history.pushState(null, "/", "/sos/"+ so_id);
 
                 if (event.data.callback) { event.data.callback(this); }
             }

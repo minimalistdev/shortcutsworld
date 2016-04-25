@@ -1,22 +1,21 @@
 class AppsController < ApplicationController
 
   def index
-    @so = So.find(params[:id])
+    @so = So.find_by_id(params[:id])
     @apps = @so.apps
 
     respond_to do |format|
       format.json { render json: @apps.to_json}
     end
-
   end
 
   def new
-    @so = So.find(params[:id])
+    @so = So.find_by_id(params[:id])
     @app = @so.apps.build
   end
 
   def create
-    @so = So.find(params[:id])
+    @so = So.find_by_id(params[:id])
     @app = @so.apps.build(app_params)
 
     if @app.save
