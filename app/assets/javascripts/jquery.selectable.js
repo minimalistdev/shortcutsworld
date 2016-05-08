@@ -1,5 +1,27 @@
 (function($) {
 
+    fillAppTable = function (so_id) {
+        $("#div_apps").html('');
+        var html = '';
+        
+        $.get("/sos/"+ so_id +"/apps", function( data ){
+            $.each(data, function(i, item){
+                html += '<div class="col-md-3 col-md-offset-1 text-center app_id_'+ item.id +'">'+
+                    '<div class="panel panel-primary clickable">'+
+                    '<div class="panel-heading">'+
+                    '<h3 class="panel-title app-name">'+ item.name +'</h3>'+
+                    '</div>'+
+                    '<div class="panel-body">'+
+                    '<img class="img-responsive center-block" src="'+ item.img.url +'">'+
+                    '</div>'+
+                    '</div>'+
+                    '</div>';
+            });
+            $("#div_apps").append(html);
+
+        });
+    }
+
     var methods = {
         init: function(callback) {
             var last = { x:-1, y:-1 };
@@ -23,7 +45,7 @@
             }
         },
 
-        destory: function() {
+        destroy: function() {
             for (i=0; i<this.length; i++) {
                 $(this[i]).unbind('.selectable');
             }
@@ -42,25 +64,8 @@
 
                 var so_id = $(".ui-selected").attr('id');
 
-                $("#div_apps").html('');
-                var html = '';
+                fillAppTable(so_id);
 
-                $.get("/sos/"+ so_id +"/apps", function( data ){
-                    $.each(data, function(i, item){
-                        html += '<div class="col-md-3 col-md-offset-1 text-center app_id_'+ item.id +'">'+
-                                    '<div class="panel panel-primary clickable">'+
-                                        '<div class="panel-heading">'+
-                                            '<h3 class="panel-title app-name">'+ item.name +'</h3>'+
-                                        '</div>'+
-                                        '<div class="panel-body">'+
-                                            '<img class="img-responsive center-block" src="'+ item.img.url +'">'+
-                                        '</div>'+
-                                    '</div>'+
-                                '</div>';
-                    });
-                    $("#div_apps").append(html);
-
-                });
                 history.pushState(null, "/", "/sos/"+ so_id);
 
                 if (event.data.callback) { event.data.callback(this); }

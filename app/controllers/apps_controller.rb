@@ -2,10 +2,15 @@ class AppsController < ApplicationController
 
   def index
     @so = So.find_by_id(params[:id])
-    @apps = @so.apps
 
-    respond_to do |format|
-      format.json { render json: @apps.to_json}
+    if @so.nil?
+      render :nothing => true
+    elsif
+      @apps = @so.apps
+
+      respond_to do |format|
+        format.json { render json: @apps.to_json}
+      end
     end
   end
 

@@ -16,7 +16,6 @@ $(document).ready(function () {
         } else {
             if (log) alert(log);
         }
-
     });
 });
 
@@ -36,7 +35,10 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    $(".so_id_" + gon.soSelectedId).addClass('ui-selected');
+    var so_id = gon.soSelectedId;
+    $(".so_id_" + so_id).addClass('ui-selected');
+
+    fillAppTable(so_id);
 });
 
 $("#new-app-btn").click(function () {
@@ -44,10 +46,24 @@ $("#new-app-btn").click(function () {
     var id = $(".ui-selected").attr('id');
 
     if (id === undefined || id === null) {
-        alert("selecione o SO");
+        $.bootstrapGrowl("Please select the So", {type: 'info', width: 350, align: 'right', delay: 4000});
+        // alert("selecione o SO");
     } else {
         console.log("called: /sos/" + id + "/apps/new")
         window.location.href = "/sos/" + id + "/apps/new";
     }
 });
+
+// $.getScript('../assets/jquery.selectable.js', function()
+// {
+//     console.log('tteeessstt');
+// });
+
+// $(document).ready(function () {
+//     jquery.selectable.js
+// });
+
+// $('so-selectable').change(function () {
+//     console.log("changeee!!");
+// });
 
