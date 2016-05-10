@@ -14,4 +14,9 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require bootstrap.file-input
+//= require cbpAnimatedHeader
+//= require classie
+//= require jquery.bootstrap-growl
+//= require validator
 //= require_tree .
