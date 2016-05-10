@@ -54,16 +54,3 @@ $("#new-app-btn").click(function () {
     }
 });
 
-// $.getScript('../assets/jquery.selectable.js', function()
-// {
-//     console.log('tteeessstt');
-// });
-
-// $(document).ready(function () {
-//     jquery.selectable.js
-// });
-
-// $('so-selectable').change(function () {
-//     console.log("changeee!!");
-// });
-

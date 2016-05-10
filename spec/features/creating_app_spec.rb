@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.feature "Creating App" do
 
-  scenario "successful on creating a App", :js => true do
+  Capybara.ignore_hidden_elements = false
 
-    Capybara.ignore_hidden_elements = false
+  scenario "successful on creating an App", :js => true do
 
     FactoryGirl.create(:so)
 
@@ -26,4 +26,17 @@ RSpec.feature "Creating App" do
     expect(page).to have_css(".app-name", :text => "Intellij")
     expect(page).to have_selector('#notice', visible: false, :text => "App created successfully!")
   end
+
+
+  scenario "select an app before creating", :js => true do
+
+    visit "/"
+
+    page.execute_script "window.scrollBy(0,-500)"
+
+    click_on "new-app-btn"
+
+    expect(page).to have_selector('.bootstrap-growl', visible: false, :text => "Please select the So")
+  end
 end
+
