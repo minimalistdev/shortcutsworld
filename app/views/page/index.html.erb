@@ -13,8 +13,8 @@
       <div class="selectable" id="so-selectable">
         <% unless @sos.nil? %>
             <% @sos.each do |so| %>
-                <div class="col-md-3 col-md-offset-1 text-center <%= "so_id_#{so.id}" %>" id="<%= so.id %>">
-                  <div class="panel panel-primary clickable">
+                <div class="col-md-3 col-md-offset-1 clickable text-center <%= "so_id_#{so.id}" %>" id="<%= so.id %>">
+                  <div class="panel panel-primary">
                     <div class="panel-heading">
                       <h3 class="panel-title so-name"><%= so.name %></h3>
                     </div>
@@ -40,10 +40,7 @@
         <h2>Select the App</h2>
       </div>
     </div>
-    <div class="col-centered">
-      <div class="selectable">
-        <div id="div_apps"></div>
-      </div>
+    <div class="col-centered selectable" id="div_apps">
     </div>
   </div>
 </section>

@@ -13,6 +13,7 @@ gem 'autoprefixer-rails', '~>5.2.0'
 gem 'font-awesome-rails'
 gem 'carrierwave'
 gem 'gon'
+gem 'jquery-ui-rails'
 
 group :development, :test do
   gem 'byebug'

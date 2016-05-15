@@ -54,3 +54,31 @@ $("#new-app-btn").click(function () {
     }
 });
 
+var fillAppTable = function (so_id) {
+        $("#div_apps").html('');
+        var html = '';
+
+        $.get("/sos/"+ so_id +"/apps", function( data ){
+            $.each(data, function(i, item){
+                html += '<div class="clickable col-md-3 col-md-offset-1 text-center app_id_'+ item.id +'">'+
+                            '<div class="panel panel-primary">'+
+                                '<div class="panel-heading">'+
+                                    '<h3 class="panel-title app-name">'+ item.name +'</h3>'+
+                                '</div>'+
+                                '<div class="panel-body">'+
+                                    '<img class="img-responsive center-block" src="'+ item.img.url +'">'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>';
+            });
+            $("#div_apps").append(html);
+        });
+};
+
+$(document).ready(function () {
+    $("#so-selectable" ).selectable({
+        selected: function(event, ui) {
+            fillAppTable(ui.selected.id);
+        }
+    });
+});

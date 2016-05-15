@@ -19,4 +19,5 @@
 //= require classie
 //= require jquery.bootstrap-growl
 //= require validator
+//= require jquery-ui
 //= require_tree .
