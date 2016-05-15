@@ -46,7 +46,7 @@ $("#new-app-btn").click(function () {
     var id = $(".ui-selected").attr('id');
 
     if (id === undefined || id === null) {
-        $.bootstrapGrowl("Please select the So", {type: 'info', width: 350, align: 'right', delay: 4000});
+        $.bootstrapGrowl("Please select the So", {type: 'info', width: 350, align: 'right', delay: 14000});
         // alert("selecione o SO");
     } else {
         console.log("called: /sos/" + id + "/apps/new")
