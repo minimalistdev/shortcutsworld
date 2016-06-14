@@ -67,6 +67,10 @@ Code.create(char: '9')
 Code.create(char: '0')
 Code.create(char: ')')
 
-So.create!(name: 'Mac OS', img: File.open(File.join(Rails.root, './app/assets/images/macos.jpg')))
-So.create(name: 'Windows', img: File.open(File.join(Rails.root, './app/assets/images/windows.jpg')))
-So.create(name: 'Ubuntu', img: File.open(File.join(Rails.root, './app/assets/images/ubuntu.jpg')))
+mac = So.create(name: 'Mac OS', img: File.open(File.join(Rails.root, './app/assets/images/macos.jpg')))
+windows = So.create(name: 'Windows', img: File.open(File.join(Rails.root, './app/assets/images/windows.jpg')))
+ubuntu = So.create(name: 'Ubuntu', img: File.open(File.join(Rails.root, './app/assets/images/ubuntu.jpg')))
+
+App.create!(so: mac, name: 'Mac OS', img: File.open(File.join(Rails.root, './app/assets/images/macos.jpg')))
+App.create!(so: windows, name: 'Windows', img: File.open(File.join(Rails.root, './app/assets/images/windows.jpg')))
+App.create!(so: ubuntu, name: 'Ubuntu', img: File.open(File.join(Rails.root, './app/assets/images/ubuntu.jpg')))
