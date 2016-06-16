@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160209234826) do
+ActiveRecord::Schema.define(version: 20160616032255) do
 
   create_table "apps", force: :cascade do |t|
     t.integer  "so_id"
@@ -22,15 +22,6 @@ ActiveRecord::Schema.define(version: 20160209234826) do
   end
 
   add_index "apps", ["so_id"], name: "index_apps_on_so_id"
-
-  create_table "codes", force: :cascade do |t|
-    t.string   "char"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "key_id"
-  end
-
-  add_index "codes", ["key_id"], name: "index_codes_on_key_id"
 
   create_table "keys", force: :cascade do |t|
     t.string   "name"
