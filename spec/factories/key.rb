@@ -1,5 +1,5 @@
 FactoryGirl.define do
 	factory :key do
-		name "enter"
+		char "enter"
 	end
 end
