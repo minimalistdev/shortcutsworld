@@ -43,7 +43,7 @@ $(document).ready(function () {
 
 $("#new-app-btn").click(function () {
 
-    var id = $(".ui-selected").attr('id');
+    var id = $("#so-selectable > .ui-selected").attr('id');
 
     if (id === undefined || id === null) {
         $.bootstrapGrowl("Please select the So", {type: 'info', width: 350, align: 'right', delay: 14000});
@@ -54,13 +54,26 @@ $("#new-app-btn").click(function () {
     }
 });
 
+
+$("#new-shortcut-btn").click(function () {
+
+    var id = $("#app-selectable > .ui-selected").attr('id');
+
+    if (id === undefined || id === null) {
+        $.bootstrapGrowl("Please select the App", {type: 'info', width: 350, align: 'right', delay: 14000});
+        console.log(id);
+        // alert("selecione o SO");
+    }
+
+});
+
 var fillAppTable = function (so_id) {
-        $("#div_apps").html('');
+        $("#app-selectable").html('');
         var html = '';
 
         $.get("/sos/"+ so_id +"/apps", function( data ){
             $.each(data, function(i, item){
-                html += '<div class="clickable col-md-3 col-md-offset-1 text-center app_id_'+ item.id +'">'+
+                html += '<div class="clickable col-md-3 col-md-offset-1 text-center app_id_'+ item.id +'" id="'+item.id+'">'+
                             '<div class="panel panel-primary">'+
                                 '<div class="panel-heading">'+
                                     '<h3 class="panel-title app-name">'+ item.name +'</h3>'+
@@ -71,7 +84,7 @@ var fillAppTable = function (so_id) {
                             '</div>'+
                         '</div>';
             });
-            $("#div_apps").append(html);
+            $("#app-selectable").append(html);
         });
 };
 
