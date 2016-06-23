@@ -47,7 +47,6 @@ $("#new-app-btn").click(function () {
 
     if (id === undefined || id === null) {
         $.bootstrapGrowl("Please select the So", {type: 'info', width: 350, align: 'right', delay: 14000});
-        // alert("selecione o SO");
     } else {
         console.log("called: /sos/" + id + "/apps/new")
         window.location.href = "/sos/" + id + "/apps/new";
@@ -62,7 +61,8 @@ $("#new-shortcut-btn").click(function () {
     if (id === undefined || id === null) {
         $.bootstrapGrowl("Please select the App", {type: 'info', width: 350, align: 'right', delay: 14000});
         console.log(id);
-        // alert("selecione o SO");
+    } else {
+        window.location.href = "/sos/0/apps/"+id+"/shortcuts/new"
     }
 
 });
@@ -92,6 +92,17 @@ $(document).ready(function () {
     $("#so-selectable" ).selectable({
         selected: function(event, ui) {
             fillAppTable(ui.selected.id);
+            window.history.pushState("SO", "Current SO", "/sos/"+ui.selected.id);
+        }
+    });
+});
+
+
+$(document).ready(function () {
+    $("#app-selectable" ).selectable({
+        selected: function(event, ui) {
+            var soId = (window.location.href).slice(-1);
+            window.history.pushState("SO", "Current SO", "/sos/" + soId + "/app/"+ui.selected.id);
         }
     });
 });
