@@ -21,6 +21,8 @@ RSpec.feature "Creating Shortcuts" do
 
     expect(page).to have_selector('h2', :text => "Create Shortcut")
 
+
+
     expect(So.first.name).to eq('Ubuntu')
     expect(App.first.so.name).to eq('Ubuntu')
   end

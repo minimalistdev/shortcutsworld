@@ -106,3 +106,22 @@ $(document).ready(function () {
         }
     });
 });
+
+
+$('.key').click(function () {
+
+    if ($('#shortcutText').html == null){
+        alert(this.text);
+    }
+
+    if(this.text == "") {
+        alert(this.text);
+    }
+
+    if(!$.trim($('#shortcutText').html())){
+        $('#shortcutText').append('<span class="shortcut">'+this.text+'</span>');
+    }else {
+        $('#shortcutText').append(' + <span class="shortcut">'+this.text+'</span>');
+    }
+
+});
