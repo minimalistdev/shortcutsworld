@@ -8,6 +8,6 @@ RSpec.describe Shortcut, type: :model do
 
   it { should belong_to(:app)}
 
-  it{ should have_and_belong_to_many(:keys)}
+  it { should validate_presence_of(:pathway)}
 
 end
