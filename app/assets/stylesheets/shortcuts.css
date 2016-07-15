@@ -50,7 +50,7 @@ body {
             0 4px 0 #bbb,
             0 10px 30px #ddd;}
 
-ul {list-style-type: none; width: 784px; margin: 0 auto;}
+.createShortcuts ul {list-style-type: none; width: 784px; margin: 0 auto;}
 li {float: left;}
 
 
@@ -309,4 +309,9 @@ span.shortcut {
 {
     content: '.';
     visibility: hidden;
+}
+
+.createShortcuts{
+    margin-top: 110px;
+    margin-bottom: 70px;
 }
