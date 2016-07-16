@@ -110,18 +110,16 @@ $(document).ready(function () {
 
 $('.key').click(function () {
 
-    if ($('#shortcutText').html == null){
-        alert(this.text);
-    }
-
-    if(this.text == "") {
-        alert(this.text);
-    }
-
-    if(!$.trim($('#shortcutText').html())){
-        $('#shortcutText').append('<span class="shortcut">'+this.text+'</span>');
+    var key;
+    if(this.text.length > 2 || this.text == 'fn') {
+        key = this.text;
     }else {
-        $('#shortcutText').append(' + <span class="shortcut">'+this.text+'</span>');
+        key = this.text.slice(-1).toUpperCase();
     }
 
+    if(!$.trim($('#path-way-input input').val())){
+        $('#path-way-input input').val(key);
+    } else {
+        $('#path-way-input input').val($('#path-way-input input').val() +'  +  '+ key);
+    }
 });
