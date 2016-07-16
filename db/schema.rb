@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20160713024231) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "app_id"
-    t.text     "pathway"
+    t.text     "shortcut"
   end
 
   add_index "shortcuts", ["app_id"], name: "index_shortcuts_on_app_id"
