@@ -24,7 +24,7 @@ class ShortcutsController < ApplicationController
     @shortcut = @app.shortcuts.build(app_params)
 
     if @shortcut.save
-      redirect_to "/sos/#{@so.id}/apps/#{@app.id}/shortcuts/#{@shortcut.id}", notice: 'Shortcut created successfully!'
+      redirect_to "/sos/#{@app.so.id}/apps/#{@app.id}/shortcuts/#{@shortcut.id}", notice: 'Shortcut created successfully!'
     else
       redirect_to :root, alert: 'Error on create Shortcut!'
     end
@@ -33,6 +33,6 @@ class ShortcutsController < ApplicationController
 
   private
   def app_params
-    params.require(:shortcut).permit(:name, :description)
+    params.require(:shortcut).permit(:name, :description, :shortcut)
   end
 end

@@ -21,10 +21,16 @@ RSpec.feature "Creating Shortcuts" do
 
     expect(page).to have_selector('h2', :text => "Create Shortcut")
 
+    fill_in "Name", with: "Copy"
+    fill_in "Description", with: "Copy something"
 
+    page.find(".c67").click
+    first(".command").click
 
-    expect(So.first.name).to eq('Ubuntu')
-    expect(App.first.so.name).to eq('Ubuntu')
+    click_on "Create Shortcut"
+
+    expect(page).to have_selector('#notice', visible: false, :text => "Shortcut created successfully!")
+
   end
 
   scenario 'select the so and app to create a shortcut', :js => true do
