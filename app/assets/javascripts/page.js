@@ -123,3 +123,20 @@ $('.key').click(function () {
         $('#path-way-input input').val($('#path-way-input input').val() +'  +  '+ key);
     }
 });
+
+
+$('.key-pc').click(function () {
+    var text = $(this).text();
+    var key;
+    if(text.length > 2 || text == 'fn') {
+        key = text;
+    }else {
+        key = text.slice(-1).toUpperCase();
+    }
+
+    if(!$.trim($('#path-way-input input').val())){
+        $('#path-way-input input').val(key.trim());
+    } else {
+        $('#path-way-input input').val($('#path-way-input input').val() +'  +  '+ key.trim());
+    }
+});
