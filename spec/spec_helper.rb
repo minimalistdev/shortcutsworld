@@ -40,11 +40,11 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-  Capybara.register_driver :firefox do |app|
-    Capybara::Selenium::Driver.new(app, :browser => :firefox)
+  Capybara.register_driver :chrome do |app|
+    Capybara::Selenium::Driver.new(app, :browser => :chrome)
   end
 
-  Capybara.javascript_driver = :firefox
+  Capybara.javascript_driver = :chrome
 
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
