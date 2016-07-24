@@ -71,9 +71,9 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
-  config.before(:each, js: true) do
-    Capybara.page.driver.browser.manage.window.maximize
-  end
+  # config.before(:each, js: true) do
+  #   Capybara.page.driver.browser.manage.window.maximize
+  # end
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
