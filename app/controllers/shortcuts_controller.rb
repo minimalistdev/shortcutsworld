@@ -26,7 +26,7 @@ class ShortcutsController < ApplicationController
     if @shortcut.save
       redirect_to "/sos/#{@app.so.id}/apps/#{@app.id}/shortcuts/#{@shortcut.id}", notice: 'Shortcut created successfully!'
     else
-      flash.now[:alert] = 'Invalid Shortcut'
+      flash.now[:alert] = @shortcut.errors.full_messages.join('\n')
       render action: "new"
     end
 
