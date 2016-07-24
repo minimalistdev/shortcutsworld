@@ -3,6 +3,6 @@ rvm:
  - 2.2
 before_install:
  - wget http://chromedriver.storage.googleapis.com/2.9/chromedriver_linux32.zip
- - unzip chromedriver_linux64.zip
+ - unzip chromedriver_linux32.zip
  - sudo chmod u+x chromedriver
  - sudo mv chromedriver /usr/bin/
