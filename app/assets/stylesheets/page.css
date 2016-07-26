@@ -533,3 +533,27 @@ footer .footer-below {
     /*box-shadow: 10px 10px 5px #888888;*/
     /*backgroupd-color:#B454C7;*/
 }
+
+span.kbd {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    border-radius: 4px;
+    border-style: outset;
+    border: 1px solid #000000;
+    background: #9f9f9f;
+    padding: 0px 3px 1px 3px;
+    margin: 0px 4px 0px 0px;
+    vertical-align: baseline;
+    line-height: 1.8em;
+    white-space: nowrap;
+}
+
+.shortcutTitle {
+    padding: 0px 20px 0px 0px;
+}
+
+.bottom-buffer {
+    margin-bottom: 20px;
+}

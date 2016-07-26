@@ -88,6 +88,30 @@ var fillAppTable = function (so_id) {
         });
 };
 
+var fillShortcutTable = function (app_id) {
+    $("#shortcut-selectable").html('');
+    var html = '';
+
+    $.get("/sos/apps/"+ app_id +"/shortcuts", function( data ){
+        $.each(data, function(i, item){
+            var keys = item.shortcut.split(" + ");
+
+            var keysHtml = [];
+            keys.forEach(function (item) {
+                keysHtml.push('<span class="kbd">' + item + '</span>');
+            });
+
+            html +=
+            '<div class="bottom-buffer col-md-3 col-md-offset-1">' +
+                '<span class="shortcutTitle"> '+ item.name +'</span>' +
+                 keysHtml.join(' + ') +
+            '</div>';
+
+        });
+        $("#shortcut-selectable").append(html);
+    });
+};
+
 $(document).ready(function () {
     $("#so-selectable" ).selectable({
         selected: function(event, ui) {
@@ -102,7 +126,8 @@ $(document).ready(function () {
     $("#app-selectable" ).selectable({
         selected: function(event, ui) {
             var soId = (window.location.href).slice(-1);
-            window.history.pushState("SO", "Current SO", "/sos/" + soId + "/app/"+ui.selected.id);
+            fillShortcutTable(ui.selected.id);
+            window.history.pushState("SO", "Current SO", "/sos/apps/"+ui.selected.id);
         }
     });
 });

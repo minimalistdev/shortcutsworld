@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'sos/:so_id/apps/:app_id/shortcuts/new', to: 'shortcuts#new', as: 'new_shortcut'
   post 'sos/apps/:app_id/shortcuts', to: 'shortcuts#create', as: 'app_shortcuts'
   get 'sos/:so_id/apps/:app_id/shortcuts/:shortcut_id', to: 'page#index', as: 'app_shortcuts_path'
+  get 'sos/apps/:id/shortcuts', to: 'shortcuts#index'
 
   # resources :sos
   # get 'page/index'
