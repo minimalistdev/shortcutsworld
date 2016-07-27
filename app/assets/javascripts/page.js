@@ -145,7 +145,7 @@ $('.key').click(function () {
     if(!$.trim($('#path-way-input input').val())){
         $('#path-way-input input').val(key);
     } else {
-        $('#path-way-input input').val($('#path-way-input input').val() +'  +  '+ key);
+        $('#path-way-input input').val($('#path-way-input input').val() +'  +  '+ key.trim());
     }
 });
 
