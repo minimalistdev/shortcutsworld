@@ -35,10 +35,16 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    var so_id = gon.soSelectedId;
+    if (typeof gon!== 'undefined' && typeof gon.soSelectedId !== 'undefined') {
+        var so_id = gon.soSelectedId;
+    }
+    if (typeof gon!== 'undefined' && typeof gon.appSelectedId !== 'undefined') {
+        var app_id = gon.appSelectedId;
+    }
+
     $(".so_id_" + so_id).addClass('ui-selected');
 
-    fillAppTable(so_id);
+    fillAppTable(so_id, app_id);
 });
 
 $("#new-app-btn").click(function () {
@@ -67,7 +73,7 @@ $("#new-shortcut-btn").click(function () {
 
 });
 
-var fillAppTable = function (so_id) {
+var fillAppTable = function (so_id, app_id) {
         $("#app-selectable").html('');
         var html = '';
 
@@ -85,6 +91,10 @@ var fillAppTable = function (so_id) {
                         '</div>';
             });
             $("#app-selectable").append(html);
+
+            if(typeof app_id !== 'undefined'){
+                $(".app_id_" + app_id).addClass('ui-selected');
+            }
         });
 };
 
@@ -113,7 +123,7 @@ var fillShortcutTable = function (app_id) {
 };
 
 $(document).ready(function () {
-    $("#so-selectable" ).selectable({
+    $("#so-selectable").selectable({
         selected: function(event, ui) {
             fillAppTable(ui.selected.id);
             window.history.pushState("SO", "Current SO", "/sos/"+ui.selected.id);
@@ -123,7 +133,7 @@ $(document).ready(function () {
 
 
 $(document).ready(function () {
-    $("#app-selectable" ).selectable({
+    $("#app-selectable").selectable({
         selected: function(event, ui) {
             var soId = (window.location.href).slice(-1);
             fillShortcutTable(ui.selected.id);

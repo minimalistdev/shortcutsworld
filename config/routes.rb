@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'sos/:so_id', to: 'page#index', as: 'so_path'
   get 'sos/:id/apps/new', to: 'apps#new', as: 'new_app'
   post 'sos/:id/apps', to: 'apps#create', as: 'so_apps'
-  get 'sos/:so_id/apps/:app_id', to: 'page#index', as: 'so_apps_path'
+  get 'sos/apps/:app_id', to: 'page#index', as: 'so_path_path'
   post 'sos', to: 'sos#create'
   get 'sos/:id/apps', to: 'apps#index'
   get 'sos/:so_id/apps/:app_id/shortcuts/new', to: 'shortcuts#new', as: 'new_shortcut'
