@@ -15,7 +15,6 @@ gem 'gon'
 gem 'jquery-ui-rails'
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'byebug'
   gem 'guard-rspec', require: false
   gem 'spring-commands-rspec'
