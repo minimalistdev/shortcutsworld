@@ -8,7 +8,8 @@ class SosController < ApplicationController
     if @so.save
       redirect_to "/sos/#{@so.id}", notice: 'SO created successfully!'
     else
-      redirect_to :root, alert: 'Error on create SO!'
+      flash.now[:alert] = @so.errors.values.last.last
+      render action: "new"
     end
   end
 

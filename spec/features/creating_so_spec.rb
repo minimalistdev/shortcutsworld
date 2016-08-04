@@ -17,30 +17,17 @@ RSpec.feature "Creating SO" do
     expect(page).to have_selector('#notice', visible: false, :text => "SO created successfully!")
   end
 
-  scenario "missing name" do
+  scenario "invalid image" do
 
     visit '/'
 
     click_link "new-so-btn"
 
-    attach_file('so_img', File.absolute_path('./spec/support/mac_os_x.jpg'))
+    attach_file('so_img', File.absolute_path('./spec/support/img.pdf'))
 
     click_button "Create SO"
 
-    expect(page).to have_selector('#alert', visible: false, :text => "Error on create SO")
-  end
-
-  scenario "missing img file" do
-
-    visit '/'
-
-    first(:link, '+').click
-
-    fill_in "Name", with: "Ubuntu"
-
-    click_button "Create SO"
-
-    expect(page).to have_selector('#alert', visible: false, :text => "Error on create SO")
+    expect(page).to have_selector('#alert', visible: false, :text => "You are not allowed to upload \"pdf\" files, allowed types: jpg, jpeg, png")
   end
 
 end

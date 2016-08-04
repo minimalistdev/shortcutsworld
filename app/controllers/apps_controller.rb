@@ -26,7 +26,8 @@ class AppsController < ApplicationController
     if @app.save
       redirect_to "/sos/apps/#{@app.id}", notice: 'App created successfully!'
     else
-      redirect_to :root, alert: 'Error on create App!'
+      flash.now[:alert] = @app.errors.values.last.last
+      render action: "new"
     end
 
   end
