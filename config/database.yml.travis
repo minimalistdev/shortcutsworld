@@ -6,4 +6,4 @@ default: &default
 test:
   <<: *default
   database: shortcutsworld_test
-  username: postgresql
+  username: postgres
