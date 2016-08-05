@@ -3,6 +3,8 @@
 
 [ShortcutsWorld](http://www.shortcutsworld.com) is a RoR Project to show my skills. 
 
+[ShortcutsWorldBeta](https://shortcutsworld.herokuapp.com/) on Heroku
+
 
 * Ruby 2.2.3
 
