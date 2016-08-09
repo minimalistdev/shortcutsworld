@@ -45,6 +45,7 @@ $(document).ready(function () {
     $(".so_id_" + so_id).addClass('ui-selected');
 
     fillAppTable(so_id, app_id);
+    fillShortcutTable(app_id);
 });
 
 $("#new-app-btn").click(function () {
