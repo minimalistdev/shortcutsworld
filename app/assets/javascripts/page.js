@@ -113,7 +113,7 @@ var fillShortcutTable = function (app_id) {
 
             html +=
             '<div class="bottom-buffer col-md-3 col-md-offset-1">' +
-                '<span class="shortcutTitle"> '+ item.name +'</span>' +
+                '<span class="shortcutTitle"> '+ item.name +'</span></br>' +
                  keysHtml.join(' + ') +
             '</div>';
 
