@@ -2,6 +2,9 @@ language: ruby
 rvm:
  - 2.2.5
 
+node_js:
+  - "iojs"
+
 addons:
  packages:
   - unzip
