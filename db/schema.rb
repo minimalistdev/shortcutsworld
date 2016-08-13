@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160713024231) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "apps", force: :cascade do |t|
     t.integer  "so_id"
     t.string   "name"
@@ -21,15 +24,15 @@ ActiveRecord::Schema.define(version: 20160713024231) do
     t.string   "img"
   end
 
-  add_index "apps", ["so_id"], name: "index_apps_on_so_id"
+  add_index "apps", ["so_id"], name: "index_apps_on_so_id", using: :btree
 
   create_table "keys_shortcuts", id: false, force: :cascade do |t|
     t.integer "shortcut_id", null: false
     t.integer "key_id",      null: false
   end
 
-  add_index "keys_shortcuts", ["key_id", "shortcut_id"], name: "index_keys_shortcuts_on_key_id_and_shortcut_id"
-  add_index "keys_shortcuts", ["shortcut_id", "key_id"], name: "index_keys_shortcuts_on_shortcut_id_and_key_id"
+  add_index "keys_shortcuts", ["key_id", "shortcut_id"], name: "index_keys_shortcuts_on_key_id_and_shortcut_id", using: :btree
+  add_index "keys_shortcuts", ["shortcut_id", "key_id"], name: "index_keys_shortcuts_on_shortcut_id_and_key_id", using: :btree
 
   create_table "shortcuts", force: :cascade do |t|
     t.string   "name"
@@ -40,7 +43,7 @@ ActiveRecord::Schema.define(version: 20160713024231) do
     t.text     "shortcut"
   end
 
-  add_index "shortcuts", ["app_id"], name: "index_shortcuts_on_app_id"
+  add_index "shortcuts", ["app_id"], name: "index_shortcuts_on_app_id", using: :btree
 
   create_table "sos", force: :cascade do |t|
     t.string   "name"
@@ -49,4 +52,5 @@ ActiveRecord::Schema.define(version: 20160713024231) do
     t.string   "img"
   end
 
+  add_foreign_key "apps", "sos"
 end

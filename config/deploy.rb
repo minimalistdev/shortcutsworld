@@ -1,6 +1,8 @@
 # config valid only for current version of Capistrano
 lock '3.4.1'
 
+set :rvm_ruby_version, '2.2.5'
+
 set :application, 'shortcutsworld'
 set :repo_url, 'git@github.com:cfsbsi/shortcutsworld.git'
 
