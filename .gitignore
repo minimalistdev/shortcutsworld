@@ -40,3 +40,4 @@ bower.json
 *.ipr
 *.iws
 
+public/uploads
