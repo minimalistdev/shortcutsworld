@@ -28,6 +28,7 @@ group :development do
   gem 'capistrano-rails', '~> 1.1.3'
   gem 'capistrano-rvm', '~> 0.1.2'
   gem 'capistrano-rails-collection'
+  gem 'capistrano-rails-console'
 end
 
 group :test do
