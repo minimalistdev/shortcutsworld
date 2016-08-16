@@ -8,7 +8,7 @@
 * Rails 4.2.4
 
 ## Dependencies
-* sqllite3
+* postgresql
 * rpec
 
 ## How to run
