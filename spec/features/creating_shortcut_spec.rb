@@ -15,7 +15,12 @@ RSpec.feature "Creating Shortcuts" do
 
     page.find(".so_id_1 > div > div > h3").click
 
+    wait_for_animation
+    wait_for_ajax
+
     page.find(".app_id_1 > div > div > h3").click
+
+    wait_for_animation
 
     click_on "new-shortcut-btn"
 
@@ -39,7 +44,12 @@ RSpec.feature "Creating Shortcuts" do
 
     page.find(".so_id_1 > div > div > h3").click
 
+    wait_for_animation
+    wait_for_ajax
+
     page.find(".app_id_1 > div > div > h3").click
+
+    wait_for_animation
 
     click_on "new-shortcut-btn"
 
@@ -60,6 +70,8 @@ RSpec.feature "Creating Shortcuts" do
     visit "/"
 
     page.find(".so_id_1 > div > div > h3").click
+
+    wait_for_animation
 
     click_on "new-shortcut-btn"
 

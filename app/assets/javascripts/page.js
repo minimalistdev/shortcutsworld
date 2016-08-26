@@ -128,6 +128,7 @@ $(document).ready(function () {
         selected: function(event, ui) {
             fillAppTable(ui.selected.id);
             window.history.pushState("SO", "Current SO", "/sos/"+ui.selected.id);
+            scrollTo("#app");
         }
     });
 });
@@ -139,6 +140,7 @@ $(document).ready(function () {
             var soId = (window.location.href).slice(-1);
             fillShortcutTable(ui.selected.id);
             window.history.pushState("SO", "Current SO", "/sos/apps/"+ui.selected.id);
+            scrollTo("#shortcut");
         }
     });
 });
@@ -176,3 +178,9 @@ $('.key-pc').click(function () {
         $('#path-way-input input').val($('#path-way-input input').val() +'  +  '+ key.trim());
     }
 });
+
+function scrollTo(here){
+    $('html, body').stop().animate({
+        scrollTop: $(here).offset().top
+    }, 1500, 'easeInOutExpo');
+}

@@ -4,15 +4,15 @@ RSpec.feature "Creating App" do
 
   Capybara.ignore_hidden_elements = false
 
-  scenario "successful on creating an App", :js => true do
+  scenario "with successful", :js => true do
 
     FactoryGirl.create(:so)
 
     visit "/"
 
-    page.execute_script "window.scrollBy(0,-500)"
-
     page.find(".so_id_1 > div > div > h3").click
+
+    wait_for_animation
 
     click_on "new-app-btn"
 
@@ -28,11 +28,9 @@ RSpec.feature "Creating App" do
   end
 
 
-  scenario "select an app before creating", :js => true do
+  scenario "get message because the selection of the so", :js => true do
 
     visit "/"
-
-    page.execute_script "window.scrollBy(0,-500)"
 
     click_on "new-app-btn"
 
