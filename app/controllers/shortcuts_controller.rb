@@ -7,7 +7,6 @@ class ShortcutsController < ApplicationController
       render :nothing => true
     elsif
       @shortcuts = @app.shortcuts.order('lower(name)')
-      puts 'hahahahahah'
 
       respond_to do |format|
         format.json { render json: @shortcuts.to_json}
