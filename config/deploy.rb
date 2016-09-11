@@ -53,6 +53,7 @@ namespace :deploy do
 
 end
 
-run 'sudo service nginx restart'
-
+within release_path do
+  run 'sudo service nginx restart'
+end
 
