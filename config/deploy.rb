@@ -46,7 +46,7 @@ namespace :deploy do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
       within release_path do
-        run "#{sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+        run "sudo touch #{File.join(current_path,'tmp','restart.txt')}"
       end
     end
   end
