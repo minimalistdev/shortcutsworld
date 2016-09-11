@@ -39,12 +39,20 @@ set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/sys
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-# namespace :deploy do
 
-  on roles(:web), in: :groups, limit: 3, wait: 10 do
-    within release_path do
-      run 'sudo service nginx restart'
+namespace :deploy do
+
+  after :restart, :clear_cache do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+      # Here we can do anything such as:
+      # within release_path do
+      #   execute :rake, 'cache:clear'
+      # end
     end
   end
 
-# end
+end
+
+run 'sudo service nginx restart'
+
+
