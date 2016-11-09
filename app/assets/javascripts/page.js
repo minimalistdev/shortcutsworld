@@ -148,9 +148,8 @@ $(document).ready(function () {
 
 $('.key').click(function () {
 
-    var key;
-    if(this.text.length > 2 || this.text == 'fn') {
-        key = this.text;
+    var key = this.text;
+    if(key.length > 2 || key == 'fn' || key.indexOf("F") === 0) {
     }else {
         key = this.text.slice(-1).toUpperCase();
     }
@@ -166,7 +165,7 @@ $('.key').click(function () {
 $('.key-pc').click(function () {
     var text = $(this).text();
     var key;
-    if(text.length > 2 || text == 'fn') {
+    if(text.length > 2 || text == 'fn' || text.indexOf("F") === 0) {
         key = text;
     }else {
         key = text.slice(-1).toUpperCase();
