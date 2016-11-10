@@ -38,7 +38,7 @@ RSpec.feature "Creating Shortcuts" do
 
   end
 
-  scenario 'error on create a shortcut, must have two keys', :js => true do
+  scenario 'error on create a shortcut, must have one key', :js => true do
 
     visit "/"
 
@@ -58,11 +58,9 @@ RSpec.feature "Creating Shortcuts" do
     fill_in "Name", with: "Copy"
     fill_in "Description", with: "Copy something"
 
-    first(".command").click
-
     click_on "Create Shortcut"
 
-    expect(page).to have_selector('#alert', visible: false, :text => "Shortcut must have at least two keys")
+    expect(page).to have_selector('#alert', visible: false, :text => "Shortcut must have at least one key")
   end
 
   scenario 'select the so and app to create a shortcut', :js => true do

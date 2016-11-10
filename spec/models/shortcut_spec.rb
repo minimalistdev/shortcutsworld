@@ -6,10 +6,10 @@ RSpec.describe Shortcut, type: :model do
 
   it{ should validate_presence_of(:description)}
 
+  it { should validate_presence_of(:shortcut).with_message('must have at least one key') }
+
   it { should belong_to(:app)}
 
-  it { should allow_value('7 + shift').for(:shortcut) }
-
-  it { should_not allow_value('shift').for(:shortcut) }
+  it { should allow_value('shift').for(:shortcut) }
 
 end
