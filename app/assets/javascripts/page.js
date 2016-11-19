@@ -133,7 +133,6 @@ $(document).ready(function () {
     });
 });
 
-
 $(document).ready(function () {
     $("#app-selectable").selectable({
         selected: function(event, ui) {
@@ -145,6 +144,9 @@ $(document).ready(function () {
     });
 });
 
+$('#shortcut-clean-button').click(function () {
+    $('#path-way-input input').val('');
+});
 
 $('.key').click(function () {
 
@@ -160,7 +162,6 @@ $('.key').click(function () {
         $('#path-way-input input').val($('#path-way-input input').val() +'  +  '+ key.trim());
     }
 });
-
 
 $('.key-pc').click(function () {
     var text = $(this).text();

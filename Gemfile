@@ -13,6 +13,7 @@ gem 'font-awesome-rails'
 gem 'carrierwave'
 gem 'gon'
 gem 'jquery-ui-rails'
+gem 'sprockets', '~> 3.0'
 
 group :development, :test do
   gem 'byebug'

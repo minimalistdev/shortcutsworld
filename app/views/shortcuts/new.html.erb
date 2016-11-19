@@ -25,10 +25,14 @@
         <div class='control-label col-md-2'>
           <%= f.label :shortcut %>
         </div>
-        <div class='col-md-9' id="path-way-input">
+        <div class='col-md-8' id="path-way-input">
           <%= f.text_field :shortcut, class: 'form-control', placeholder: 'Shortcut', autofocus: true, readonly: true %>
         </div>
+        <div class='col-md-1' id="shortcut-clean-button">
+          <button type="button" class="btn btn-primary" formnovalidate>Clean</button>
+        </div>
       </div>
+
 
       <% if @app.so.id == 1 %>
           <div id="keyboard">
