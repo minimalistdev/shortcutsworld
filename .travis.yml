@@ -10,6 +10,11 @@ addons:
   - unzip
   - google-chrome-stable
 before_install:
+  # Install Chrome driver
+ - wget http://chromedriver.storage.googleapis.com/2.9/chromedriver_linux64.zip
+ - unzip chromedriver_linux64.zip
+ - sudo chmod u+x chromedriver
+ - sudo mv chromedriver /usr/bin/
 
  # For selenium in headless linux system, But no need when PhantomJS
  - "export DISPLAY=:99.0"
