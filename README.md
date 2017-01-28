@@ -1,7 +1,5 @@
-# ShortcutsWorld
+# [ShortcutsWorld](http://www.shortcutsworld.com)
 [![Build Status](https://travis-ci.org/cfsbsi/shortcutsworld.svg?branch=master)](https://travis-ci.org/cfsbsi/shortcutsworld)
-
-[ShortcutsWorld](http://www.shortcutsworld.com) is a RoR Project to show my skills. 
 
 * Ruby 2.2.5
 
