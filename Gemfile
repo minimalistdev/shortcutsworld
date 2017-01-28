@@ -19,6 +19,8 @@ group :development, :test do
   gem 'byebug'
   gem 'guard-rspec', require: false
   gem 'spring-commands-rspec'
+  gem 'chromedriver-helper'
+
 end
 
 group :development do
