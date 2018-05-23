@@ -1,4 +1,4 @@
-# [ShortcutsWorld](http://www.shortcutsworld.com)
+# ShortcutsWorld
 [![Build Status](https://travis-ci.org/cfsbsi/shortcutsworld.svg?branch=master)](https://travis-ci.org/cfsbsi/shortcutsworld)
 
 * Ruby 2.2.5
